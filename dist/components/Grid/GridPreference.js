@@ -15,6 +15,7 @@ require("core-js/modules/esnext.iterator.for-each.js");
 require("core-js/modules/esnext.iterator.map.js");
 require("core-js/modules/web.dom-collections.iterator.js");
 var _react = _interopRequireWildcard(require("react"));
+var _reactRouterDom = require("react-router-dom");
 var _Close = _interopRequireDefault(require("@mui/icons-material/Close"));
 var _Delete = _interopRequireDefault(require("@mui/icons-material/Delete"));
 var _Edit = _interopRequireDefault(require("@mui/icons-material/Edit"));
@@ -117,7 +118,7 @@ const GridPreferences = _ref => {
   } = (0, _StateProvider.useStateContext)();
   const {
     navigate
-  } = (0, _StateProvider.useRouter)();
+  } = (0, _reactRouterDom.useNavigate)();
   const apiRef = (0, _xDataGridPremium.useGridApiRef)();
   const snackbar = (0, _SnackBar.useSnackbar)();
   const {

@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import CloseIcon from '@mui/icons-material/Close';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
@@ -11,7 +12,7 @@ import * as yup from 'yup';
 import { useSnackbar } from '../SnackBar';
 import { useTranslation } from 'react-i18next';
 import request from './httpRequest';
-import { useStateContext, useRouter } from '../useRouter/StateProvider';
+import { useStateContext } from '../useRouter/StateProvider';
 import actionsStateProvider from '../useRouter/actions';
 import { DialogComponent } from '../Dialog';
 
@@ -43,7 +44,7 @@ const initialValues = {
 const pageSizeOptions = [5, 10, 20, 50, 100];
 const GridPreferences = ({ tTranslate = (key) => key, preferenceName, gridRef, columns = [], setIsGridPreferenceFetched }) => {
     const { stateData, dispatchData, removeCurrentPreferenceName, getAllSavedPreferences } = useStateContext();
-    const { navigate } = useRouter();
+    const { navigate } = useNavigate();
     const apiRef = useGridApiRef();
     const snackbar = useSnackbar();
     const { t: translate, i18n } = useTranslation();
