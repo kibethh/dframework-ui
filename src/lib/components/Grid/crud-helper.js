@@ -184,7 +184,7 @@ const getList = async ({ gridColumns, setIsLoading, setData, page, pageSize, sor
                 window.location.href = '/';
                 break;
             default:
-                setError('Could not list record', error.message || error.toString());
+                setError('Could not list record', error.message || error?.toString());
                 break;
         }
     } finally {
@@ -245,7 +245,7 @@ const getRecord = async ({ api, id, setIsLoading, setActiveRecord, model, parent
             }, timeInterval);
         }
         else {
-            setError('Could not load record', error.message || error.toString());
+            setError('Could not load record', error.message || error?.toString());
         }
     } finally {
         setIsLoading(false);
@@ -283,7 +283,7 @@ const deleteRecord = async function ({ id, api, setIsLoading, setError }) {
                 window.location.href = '/';
             }, timeInterval);
         } else {
-            setError('Could not delete record', error.message || error.toString());
+            setError('Could not delete record', error.message || error?.toString());
         }
 
     } finally {
@@ -332,7 +332,7 @@ const saveRecord = async function ({ id, api, values, setIsLoading, setError }) 
             }, timeInterval);
         } else {
 
-            setError('Could not save record', error.message || error.toString());
+            setError('Could not save record', error.message || error?.toString());
         }
     } finally {
         setIsLoading(false);
@@ -360,7 +360,7 @@ const getLookups = async ({ api, setIsLoading, setActiveRecord, model, setError,
             window.location.href = '/';
         }
     } catch (error) {
-        setError('Could not delete record', error.message || error.toString());
+        setError('Could not delete record', error.message || error?.toString());
     } finally {
         setIsLoading(false);
     }

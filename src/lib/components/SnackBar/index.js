@@ -16,7 +16,7 @@ const SnackbarProvider = ({ children }) => {
     const [handleAction, setHandleAction] = useState(null);
 
     const showMessage = function (title, message, severity = "info", onAction) {
-        if (typeof title !== 'string') {
+        if (title && typeof title !== 'string') {
             title = title.toString();
         }
         if (message && typeof message !== 'string') {

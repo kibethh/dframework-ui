@@ -259,7 +259,7 @@ const getList = async _ref => {
         window.location.href = '/';
         break;
       default:
-        setError('Could not list record', error.message || error.toString());
+        setError('Could not list record', error.message || (error === null || error === void 0 ? void 0 : error.toString()));
         break;
     }
   } finally {
@@ -340,7 +340,7 @@ const getRecord = async _ref4 => {
         window.location.href = '/';
       }, timeInterval);
     } else {
-      setError('Could not load record', error.message || error.toString());
+      setError('Could not load record', error.message || (error === null || error === void 0 ? void 0 : error.toString()));
     }
   } finally {
     setIsLoading(false);
@@ -388,7 +388,7 @@ const deleteRecord = exports.deleteRecord = async function deleteRecord(_ref5) {
         window.location.href = '/';
       }, timeInterval);
     } else {
-      setError('Could not delete record', error.message || error.toString());
+      setError('Could not delete record', error.message || (error === null || error === void 0 ? void 0 : error.toString()));
     }
   } finally {
     setIsLoading(false);
@@ -438,7 +438,7 @@ const saveRecord = exports.saveRecord = async function saveRecord(_ref6) {
         window.location.href = '/';
       }, timeInterval);
     } else {
-      setError('Could not save record', error.message || error.toString());
+      setError('Could not save record', error.message || (error === null || error === void 0 ? void 0 : error.toString()));
     }
   } finally {
     setIsLoading(false);
@@ -473,7 +473,7 @@ const getLookups = async _ref7 => {
       window.location.href = '/';
     }
   } catch (error) {
-    setError('Could not delete record', error.message || error.toString());
+    setError('Could not delete record', error.message || (error === null || error === void 0 ? void 0 : error.toString()));
   } finally {
     setIsLoading(false);
   }

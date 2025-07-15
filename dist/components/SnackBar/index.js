@@ -35,7 +35,7 @@ const SnackbarProvider = _ref => {
   const showMessage = function showMessage(title, message) {
     let severity = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "info";
     let onAction = arguments.length > 3 ? arguments[3] : undefined;
-    if (typeof title !== 'string') {
+    if (title && typeof title !== 'string') {
       title = title.toString();
     }
     if (message && typeof message !== 'string') {
